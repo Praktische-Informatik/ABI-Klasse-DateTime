@@ -1,7 +1,6 @@
 #pragma once
 #pragma warning(disable:4996) // Compilerwarnung für ctime _CRT_SECURE_NO_WARNINGS
 
-
 #include <iostream>
 #include <string>
 #include <chrono>
@@ -38,6 +37,7 @@ public:
     int getSec();
 
     time_t getDateTime();
+    int compareTo(DateTime* dt);  // Danke an Simon Schneider ABI 2022! Wer Hilft die Methode zu kommentieren und in der main zu testen?
 
 };
 

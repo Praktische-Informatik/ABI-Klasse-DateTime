@@ -166,3 +166,67 @@ time_t DateTime::getDateTime()
 	return aktuell;
 }
 
+int DateTime::compareTo(DateTime* dt)
+{
+	if (this->getYear() < dt->getYear()) { //liegt DateTime Objekt vor dem Parameter, dann wird -1 zurückgegeben
+		return -1;
+	}
+	if (this->getMonth() < dt->getMonth()) {
+		return -1;
+	}
+	if (this->getDay() < dt->getDay()) {
+		return -1;
+	}
+	if (this->getHour() < dt->getHour()) {
+		return -1;
+	}
+	if (this->getMin() < dt->getMin()) {
+		return -1;
+	}
+	if (this->getSec() < dt->getSec()) {
+		return -1;
+	}
+
+	if (this->getYear() == dt->getYear()) { //DateTime Objekt ist gleich dem Parameter
+
+		if (this->getMonth() == dt->getMonth()) {
+
+
+			if (this->getDay() == dt->getDay()) {
+
+
+				if (this->getHour() == dt->getHour()) {
+
+					if (this->getMin() == dt->getMin()) {
+
+						if (this->getSec() == dt->getSec()) {
+							return 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if (this->getYear() > dt->getYear()) { //liegt DateTime Objekt nach dem Parameter, dann wird 1 zurückgegeben
+		return 1;
+	}
+	if (this->getMonth() > dt->getMonth()) {
+		return 1;
+	}
+	if (this->getDay() > dt->getDay()) {
+		return 1;
+	}
+	if (this->getHour() > dt->getHour()) {
+		return 1;
+	}
+	if (this->getMin() > dt->getMin()) {
+		return 1;
+	}
+	if (this->getSec() > dt->getSec()) {
+		return 1;
+	}
+
+	return 2;//Fehler
+}
+
