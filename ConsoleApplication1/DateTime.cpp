@@ -36,6 +36,11 @@ DateTime::DateTime()
 	date = this->toStringDate();
 }
 
+/// <summary>
+/// DateTime aus zwei strings
+/// </summary>
+/// <param name="date">: Datum, Format: tt.mm.yyyy</param>
+/// <param name="time">: Uhrzeit, Format: hh.mm.ss</param>
 DateTime::DateTime(string date, string time)
 {
 	// Datum
@@ -78,7 +83,7 @@ DateTime::DateTime(string date, string time)
 		switch (i)
 		{
 		case 0:
-			sec1 = stoi(ts);
+			std1 = stoi(ts);
 			break;
 		case 1:
 			min1 = stoi(ts);
@@ -87,11 +92,11 @@ DateTime::DateTime(string date, string time)
 		i++;
 		time.erase(0, e + 1);
 	}
-	std1 = stoi(time);
+	sec1 = stoi(time);
 
-		sec = tag1;
+		sec = sec1;
 		min = min1;
-		hour = sec1;
+		hour = std1;
 
 		// Systemzeit ermitteln
 		std::chrono::system_clock::time_point timeNow = std::chrono::system_clock::now();
